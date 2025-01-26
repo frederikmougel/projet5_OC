@@ -1,0 +1,27 @@
+@use './variables' as vars;
+
+.not-found-container{
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 100px;
+    text-align: center;
+
+    h1{
+        color: vars.$primary-color;
+        font-weight: 700;
+        font-size: 180px;
+        height: fit-content;
+    }
+
+    p{
+        color: vars.$primary-color;
+        font-size: 26px;
+    }
+
+    a{
+        text-decoration: underline;
+    }
+}

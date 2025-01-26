@@ -1,3 +1,5 @@
+@use './variables' as vars;
+
 /* Montserrat Font */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
@@ -8,8 +10,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat';
-  color: black;
+  font-family: vars.$font-family;
+}
+html, body {
+  height: 100%;
 }
 input, textarea, button, select, a {
   border: none;
@@ -25,6 +29,7 @@ ul, ol {
 
 a {
     text-decoration: none;
+    color: black;
 }
 
 button, input, select {
@@ -32,6 +37,9 @@ button, input, select {
 }
 
 /************/
-body{
-    padding: 0 70px;
+.main{
+  padding: 0 70px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
