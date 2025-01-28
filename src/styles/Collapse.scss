@@ -1,0 +1,59 @@
+@use './variables' as vars;
+
+.collapse {
+  background-color: vars.$secondary-background-color;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  border-radius: 6px;
+
+  &.open {
+    .collapse-content {
+      max-height: 500px;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .collapse-header {
+    padding: 13px;
+    background-color: vars.$primary-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+    color: white;
+    font-size: 1.25rem;
+
+    h3 {
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .chevron{
+      cursor: pointer;
+    }
+  }
+
+  .collapse-content {
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    padding: 0 17px;
+    transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+
+    div {
+      padding: 17px 0;
+      line-height: 1.5;
+    }
+  }
+
+  .collapse-list {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    .collapse-list-item {
+      line-height: 1.5;
+    }
+  }
+}

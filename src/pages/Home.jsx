@@ -4,7 +4,7 @@ import Logements from "../components/Logements";
 const Home = () => {
   return (
     <div>
-        <Banner />
+        <Banner type={'type1'}/>
         <Logements />
     </div>
 );
