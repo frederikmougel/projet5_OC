@@ -10,6 +10,7 @@ const Router = () => {
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="404" element={<NotFound />} />
             <Route path="logement/:id" element={<ItemLogement />} />
         </Routes>
     );
