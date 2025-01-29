@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "../styles/Slideshow.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import chevron from '../assets/chevron.svg';
 
 const Slideshow = ({ pictures }) => {
     const displayButton = !!(pictures.length - 1)
@@ -29,8 +28,19 @@ const Slideshow = ({ pictures }) => {
             />
             { displayButton && (
                 <>
-                    <FontAwesomeIcon className="slideshow-button prev" icon={faChevronLeft} onClick={handlePrev}/>
-                    <FontAwesomeIcon className="slideshow-button next" icon={faChevronRight} onClick={handleNext}/>
+                    <img
+                        src={chevron}
+                        alt="Previous"
+                        className="slideshow-button prev"
+                        onClick={handlePrev}
+                    />
+                    <img
+                        src={chevron}
+                        alt="Next"
+                        className="slideshow-button next"
+                        onClick={handleNext}
+                    />
+                    <p className="numerotation">{currentImageIndex+1}/{pictures.length}</p>
                 </>
             )}
         </div>

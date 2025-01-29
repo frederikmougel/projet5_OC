@@ -3,9 +3,8 @@ import Collapse from "../components/Collapse";
 import logementsData from "../data/logements.json";
 import Tag from "../components/Tag";
 import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
 import "../styles/ItemLogement.scss";
+import star from '../assets/star.svg';
 import Slideshow from "../components/Slideshow";
 
 const ItemLogement = () => {
@@ -59,7 +58,7 @@ const ItemLogement = () => {
           </div>
           <div className="rating">
             {[...Array(5)].map((_, index) => (
-              <FontAwesomeIcon key={index} className={`star ${index < rating ? "active" : ""}`} icon={faStar} />
+              <img key={index} className={`star ${index < rating ? "active" : ""}`} src={star} alt="Rate" />
             ))}    
           </div>
         </div>

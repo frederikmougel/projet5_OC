@@ -70,10 +70,10 @@
     
                 .star{
                     color: #E3E3E3;
-                    font-size: 20px;
                 }
                 .active{
-                    color: vars.$primary_color
+                    color: vars.$primary_color;
+                    filter: invert(56%) sepia(77%) saturate(430%) hue-rotate(315deg);
                 }
             }
         }
@@ -113,6 +113,13 @@
                         img{
                             width: 50px;
                         }
+                    }
+                }
+
+                .rating{
+                    .star{
+                        width: 20px;
+                        height: 20px;
                     }
                 }
             }
