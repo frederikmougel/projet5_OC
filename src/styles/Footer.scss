@@ -14,14 +14,25 @@ footer{
         display: flex;
         justify-content: center;
         align-items: center; 
-        gap: 6px; 
-
-        .fa-copyright{
-            font-size: 12px;
-            color: white;
-        }
         p{
             color: white;
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    footer{
+        img{
+            margin-bottom: 15px;
+            width: 130px;
+        }
+
+        span{
+            max-width: 40%;
+            margin: 0 auto;
+            margin-bottom: 30px;
+            font-size: 12px;
+            text-align: center;
         }
     }
 }

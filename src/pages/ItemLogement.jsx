@@ -6,10 +6,10 @@ import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import "../styles/ItemLogement.scss";
-import Slideshow from "./Slideshow";
+import Slideshow from "../components/Slideshow";
 
 const ItemLogement = () => {
-  const navigate = useNavigate(); // Hook pour redirection
+  const navigate = useNavigate();
   const { id } = useParams();
   const [logement, setLogement] = useState(null);
 
@@ -37,29 +37,31 @@ const ItemLogement = () => {
 
       <Slideshow pictures={pictures} />
 
-      <div className="infos">
-        <div className="title-and-location">
-          <h3>{title}</h3>
-          <p>{location}</p>
-        </div>
-        <div className="host">
-          <p>{hostName}</p>
-          <div className="host-picture-container">
-            <img src={host.picture} alt={host.name} />
+      <div className="main-content">
+        <div className="infos">
+          <div className="title-and-location">
+            <h3>{title}</h3>
+            <p>{location}</p>
+          </div>
+          <div className="tags">
+            {tags.map((tag, index) => (
+                <Tag key={index} tag={tag}/>
+            ))}
           </div>
         </div>
-      </div>
 
-      <div className="tags-and-rating"> 
-        <div className="tags">
-          {tags.map((tag, index) => (
-              <Tag key={index} tag={tag}/>
-          ))}
-        </div>
-        <div className="rating">
-          {[...Array(5)].map((_, index) => (
-            <FontAwesomeIcon key={index} className={`star ${index < rating ? "active" : ""}`} icon={faStar} />
-          ))}    
+        <div className="host-and-rating"> 
+          <div className="host">
+            <p>{hostName}</p>
+            <div className="host-picture-container">
+              <img src={host.picture} alt={host.name} />
+            </div>
+          </div>
+          <div className="rating">
+            {[...Array(5)].map((_, index) => (
+              <FontAwesomeIcon key={index} className={`star ${index < rating ? "active" : ""}`} icon={faStar} />
+            ))}    
+          </div>
         </div>
       </div>
 

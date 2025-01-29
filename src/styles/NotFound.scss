@@ -25,3 +25,12 @@
         text-decoration: underline;
     }
 }
+
+@media (max-width: 767.98px) {
+    .not-found-container{
+        margin-top: 5vh;
+        h1{
+            font-size: 90px;
+        }
+    }
+}

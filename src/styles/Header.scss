@@ -1,6 +1,7 @@
 header {
     display: flex;
     justify-content: space-between;
+    min-width: fit-content;
     align-items: center;
     color: white;
     padding: 30px 0;
@@ -13,10 +14,33 @@ header {
     nav {
         display: flex;
         gap: 40px;
-  
+        margin-left: 20px;
+        
+        a{
+            text-wrap-mode: nowrap;
+        }
         a.isActive {
             text-decoration: underline;
             text-underline-offset: 2px;
         }
     }
 }  
+
+@media (max-width: 767.98px) {
+    header {
+        img{
+            width: 140px;
+        }
+
+        nav{
+            gap: 30px;
+            a{
+                font-size: 14px;
+            }
+        }
+
+        a{
+            text-transform: uppercase;
+        }
+    }
+}

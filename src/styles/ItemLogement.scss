@@ -2,76 +2,79 @@
 
 .logement-item{
 
-    .infos{
+    .main-content{
         display: flex;
         justify-content: space-between;
-        margin-top: 30px;
-        margin-bottom: 20px;
+        margin: 30px 0;
 
-        .title-and-location{
-            h3{
-                font-weight: normal;
-                font-size: 2rem;
-                color: vars.$primary_color;
-                margin-bottom: 5px;
-            }
-
-            p{
-
-            }
-        }
-
-        .host{
+        .infos{
             display: flex;
-            align-items: center;
-            gap: 10px;
-
-            p{
-                color: vars.$primary_color;
-                white-space: pre-wrap;
-                text-align: right;
-            }
-
-            .host-picture-container{
-                background-color: #C4C4C4;
-                width: 64px;
-                height: 64px;
-                border-radius: 50%;
-                overflow: hidden;
-                
-                img{
-                    width: 64px;
-                    height: auto;
-                    object-fit: cover;
-                    object-position: center;
+            flex-direction: column;
+            justify-content: space-between;
+    
+            .title-and-location{
+                h3{
+                    font-weight: normal;
+                    font-size: 2rem;
+                    color: vars.$primary_color;
+                    margin-bottom: 5px;
                 }
             }
-        }
-    }
-
-    .tags-and-rating{
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 30px;
-
-        .tags{
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .rating{
-            display: flex;
-            gap: 10px;
-
-            .star{
-                color: #E3E3E3;
-                font-size: 20px;
+    
+            .tags{
+                margin-top: 20px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
             }
-            .active{
-                color: vars.$primary_color
+        }
+    
+        .host-and-rating{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+    
+            .host{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+    
+                p{
+                    display: flex;
+                    line-height: 1.5rem;
+                    color: vars.$primary_color;
+                    white-space: pre-wrap;
+                    text-align: right;
+                    margin-left: 20px;
+                }
+    
+                .host-picture-container{
+                    background-color: #C4C4C4;
+                    width: 64px;
+                    height: 64px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    
+                    img{
+                        width: 64px;
+                        height: auto;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+            }
+    
+            .rating{
+                display: flex;
+                gap: 10px;
+    
+                .star{
+                    color: #E3E3E3;
+                    font-size: 20px;
+                }
+                .active{
+                    color: vars.$primary_color
+                }
             }
         }
     }
@@ -80,7 +83,6 @@
         display: flex;
         gap: 100px;
         margin-bottom: 50px;
-        align-items: stretch;
         
         .collapse-container {
             flex: 1;
@@ -88,6 +90,41 @@
             
             .collapse-header h3{
                 font-size: 1.15rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .logement-item {
+        .main-content{
+            flex-direction: column;
+
+            .host-and-rating{
+                margin-top: 20px;
+                flex-direction: row-reverse;
+                align-items: center;
+
+                .host{
+                    .host-picture-container{
+                        width: 50px;
+                        height: 50px;
+                        
+                        img{
+                            width: 50px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .collapses {
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 50px;
+            
+            .collapse-header{
+                padding: 10px;
             }
         }
     }
