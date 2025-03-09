@@ -32,7 +32,7 @@ const Collapse = ({ title, children }) => {
         <div className="chevron" onClick={toggleCollapse}>
             {isOpen ? <img src={chevron} alt="Close" className="down" /> : <img src={chevron} alt="Open" className="up" />}
         </div>
-    </div>
+      </div>
       <div className="collapse-content">
         <div>{renderContent()}</div>
       </div>
